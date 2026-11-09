@@ -1,0 +1,150 @@
+# Stream Prompter
+
+Listens to your microphone while you stream. When you have been quiet for a set time (5 minutes by default), it shows a random talking prompt.
+
+## Features
+
+- **Microphone**
+  - Mic picker.
+  - Live level meter that marks background noise and the talk threshold.
+  - One-click calibration.
+- **Prompt sets**
+  - Each `.txt` file in the prompt sets folder is one set.
+  - Switch sets on and off in the app.
+  - New or edited files load automatically while the app is running.
+- **Picking prompts**
+  - No prompt repeats until its pool has been used up.
+  - Optional *Equal chance per set* mode.
+- **OBS**
+  - The current prompt is written to a text file that an OBS Text source can read.
+- **Controls**
+  - Pause, Next prompt, Clear.
+  - Choose how long a prompt stays once you start talking: instantly, a set time, or until the next prompt.
+  - Always on top, Beep.
+- **Settings**
+  - Saved automatically, including window position.
+
+## Quick start
+
+| System | Steps |
+|---|---|
+| **Windows** | 1. Install Python 3.9+ from [python.org](https://www.python.org/downloads/) and tick **Add python.exe to PATH**. 2. Double-click `run_windows.bat`. |
+| **macOS** | 1. Install Python 3.9+ from [python.org](https://www.python.org/downloads/). This version includes Tk. 2. Double-click `run_mac.command`. The first time, right-click it and choose **Open**. 3. Allow microphone access for Terminal when asked. |
+| **Linux** | 1. Run `sudo apt install python3-venv python3-tk libportaudio2`. 2. Run `./run_linux.sh`. |
+
+The first run creates a private environment in `.venv` and installs `sounddevice` and `numpy`. This needs internet. Later runs start immediately.
+
+Manual install, any system:
+
+```
+pip install .
+stream-prompter
+```
+
+You can also run it from this folder with `python -m stream_prompter`.
+
+## Using it
+
+1. **Pick your mic** from the dropdown. If you just plugged one in, press **Refresh**.
+2. **Press Calibrate** and stay quiet for 3 seconds. This sets the threshold 8 dB above your room noise.
+   - Blue mark on the meter: background noise.
+   - Yellow mark: threshold.
+   - The bar turns green while you are talking.
+3. **Set the silence time** under Options.
+4. **Stream.** After that much silence, a prompt appears in the window and in the OBS file.
+   - **Hide prompt after I talk** (under Options) sets how long it stays once you start talking: *Instantly*, 3 s to 5 min, or *Until next prompt*. While it counts down, the window shows "hiding in N s".
+   - **Clear** hides it by hand at any time.
+   - If the silence continues, a new prompt appears after the same time again.
+
+## Prompt sets
+
+Each `.txt` file in the prompt sets folder is one set. Use **Open folder** in the app to go there.
+
+| System | Default folder |
+|---|---|
+| Windows | `%APPDATA%\StreamPrompter\prompt_sets` |
+| macOS | `~/Library/Application Support/StreamPrompter/prompt_sets` |
+| Linux | `~/.config/stream-prompter/prompt_sets` |
+
+### File format
+
+One prompt per line. Blank lines and lines starting with `#` are ignored.
+
+```
+# My custom set
+Ask chat where they're watching from.
+What's the best snack for a long stream?
+```
+
+- **Set name**
+  - Comes from the file name.
+  - Underscores become spaces: `hot_takes.txt` shows as **Hot Takes**.
+  - Names with capitals are shown as typed: `IRL Stories.txt` stays **IRL Stories**.
+- **Add a set**
+  - Click **New set…**, which creates the file and opens it in your text editor.
+  - Or drop any `.txt` file into the folder.
+  - New sets start switched on.
+- **Edit a set**
+  - Click **Edit** next to it, change the file, and save.
+  - The app reloads within 2 seconds.
+- **Remove a set**: delete the file.
+- **Switch sets on or off**: use the checkboxes, or **All on** / **All off**. Sets you switch off stay off after a restart.
+- **Equal chance per set**
+  - Off (default): every prompt is equally likely, so a 50-prompt set comes up more often than a 10-prompt set.
+  - On: enabled sets take turns.
+- **Shared or synced folder**
+  - Use **Change folder…** to read sets from another folder, such as a Dropbox, OneDrive, or git folder shared with your team.
+  - **Use default folder** switches back.
+- **Text encoding**
+  - UTF-8 is recommended.
+  - Files saved by Notepad as ANSI or Unicode (UTF-16) also work.
+
+Seven starter sets are copied in on first run: About Me, Chat Questions, Gameplay Talk, Hot Takes, Mini Challenges, Storytime, Would You Rather. A starter set you delete is not restored.
+
+## OBS
+
+1. In OBS, add **Sources → + → Text** (GDI+ on Windows, FreeType 2 on macOS/Linux).
+2. Tick **Read from file** and choose the file shown under **OBS text file** in the app. **Copy** puts the path on the clipboard.
+
+The file is empty when no prompt is showing. Anything you put in a scene is visible to viewers. If the prompts are only for you, keep the app window on a second monitor instead.
+
+## Build a Windows .exe
+
+Double-click `build_windows.bat`. It produces `dist\StreamPrompter.exe`, a single file that runs without Python installed. Settings and prompt sets stay in `%APPDATA%\StreamPrompter`, so the .exe can be moved or replaced without losing them.
+
+## Portable mode
+
+To keep settings, sets, the OBS file, and the log somewhere specific, such as on a USB drive:
+
+```
+stream-prompter --data-dir "D:\StreamPrompterData"
+python -m stream_prompter --data-dir ./data
+```
+
+## Troubleshooting
+
+- **Mic not listed**
+  - Press **Refresh**.
+  - On Windows, each mic is listed once per audio system (MME, WASAPI, …). If one entry won't open, try another.
+- **"Couldn't open mic"**: another app may be using the mic exclusively, or permission was denied.
+- **macOS, meter stays empty**
+  - Open System Settings → Privacy & Security → Microphone.
+  - Enable Terminal, or the app you launched from.
+- **macOS with Homebrew Python, error about tkinter**: run `brew install python-tk`.
+- **Linux, "PortAudio library not found"**: run `sudo apt install libportaudio2`.
+- **Something else**: check `stream_prompter.log` in the data folder.
+
+## Project layout
+
+```
+stream_prompter/
+  app.py          main window
+  audio.py        mic input and level measurement
+  prompts.py      prompt-set loading and the prompt picker
+  storage.py      data folder, settings, starter sets
+  theme.py        dark theme
+  default_sets/   starter prompt sets
+  assets/         icons
+tests/            unit tests:  python -m unittest discover -s tests
+launcher.py       entry point for the .exe build
+```

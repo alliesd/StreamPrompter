@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stream-prompter"
+dynamic = ["version"]
+description = "Shows a random talking prompt after a stretch of mic silence while you stream."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "sounddevice>=0.4.6",
+    "numpy>=1.21",
+]
+
+[project.gui-scripts]
+stream-prompter = "stream_prompter.app:main"
+
+[tool.setuptools]
+packages = ["stream_prompter"]
+
+[tool.setuptools.dynamic]
+version = { attr = "stream_prompter.__version__" }
+
+[tool.setuptools.package-data]
+stream_prompter = ["default_sets/*.txt", "assets/*"]
