@@ -1,0 +1,15 @@
+# One prompt per line. Lines starting with # are ignored.
+What's the best piece of advice you've ever gotten?
+What's a skill you'd learn instantly if you could?
+What's something you changed your mind about recently?
+What's a small thing that instantly improves your mood?
+What would you from 10 years ago think of this stream?
+Tell chat about something you're working on off-stream.
+What's the last thing you learned that blew your mind?
+What's a hobby you dropped that you'd like to pick back up?
+Rate the last movie or show you watched out of 10.
+What's on your bucket list?
+What's your go-to comfort food?
+What's a goal you're working toward this year?
+What's the best compliment you've ever received?
+What's a place you'd love to visit and why?

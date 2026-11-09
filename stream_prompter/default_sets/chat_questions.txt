@@ -1,0 +1,21 @@
+# One prompt per line. Lines starting with # are ignored.
+Ask chat where they're watching from.
+Ask chat what they're eating or drinking right now.
+Ask chat: what should the next stream goal be?
+Ask chat: what's one thing they're looking forward to this week?
+Ask chat for their weirdest habit, then share yours.
+Ask chat which game they've sunk the most hours into.
+Ask chat what song they've had on repeat lately.
+Ask chat for the best snack to have while gaming.
+Ask chat what they'd name a pet dragon.
+Ask chat what the first game they ever played was.
+Ask chat to rate your setup out of 10.
+Ask chat what they'd do with an extra hour every day.
+Ask chat what their comfort show is.
+Ask chat which game they'd want a sequel to.
+Ask chat for a random word, then use it in your next sentence.
+Ask chat what skill they're learning right now.
+Ask chat for the worst game they've ever finished.
+Ask chat for their go-to karaoke song.
+Ask chat what they want to see on the next stream.
+Ask chat what time it is where they are.

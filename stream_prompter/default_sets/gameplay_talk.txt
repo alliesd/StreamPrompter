@@ -1,0 +1,17 @@
+# One prompt per line. Lines starting with # are ignored.
+Explain your current strategy out loud, step by step.
+Commentate what you're doing right now like a sports announcer.
+What would you change about this game if you were the developer?
+Rate the game you're playing out of 10 so far.
+What's the best moment in this game so far?
+Explain the controls to chat like they've never played a game.
+What's your goal for this session?
+Guess what happens next in the game, then see if you're right.
+Talk about the art style. What works and what doesn't?
+What's the most frustrating part of this game?
+Which character or item from this game would you want in real life?
+Compare this game to another one you've played.
+What's a game you'd love to play on stream but haven't yet?
+What tip would you give a brand-new player of this game?
+Rate the soundtrack so far.
+If this game got a sequel, what should it add?

@@ -1,0 +1,19 @@
+# One prompt per line. Lines starting with # are ignored.
+Share a childhood story that still makes you cringe.
+What's the scariest thing that's ever happened to you?
+What's the worst purchase you've ever made?
+Tell chat about the last thing that made you laugh out loud.
+Tell the story of how you started streaming.
+What's the most embarrassing thing you've done in public?
+Describe the worst job you've ever had.
+Tell chat about a time you got completely lost.
+What's the best trip you've ever taken?
+Share a story about a teacher you'll never forget.
+What's the weirdest dream you remember?
+Tell chat about your first gaming setup.
+What's the dumbest way you've ever hurt yourself?
+Share a story about a pet you've had.
+What's the best meal you've ever eaten, and where?
+Tell chat about a time you were completely wrong about something.
+Describe the most chaotic family gathering you've been to.
+What's a small win you had this week?

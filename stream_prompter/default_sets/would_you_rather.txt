@@ -1,0 +1,19 @@
+# One prompt per line. Lines starting with # are ignored.
+Would you rather only play one game forever, or never replay any game?
+Would you rather fight one horse-sized duck or a hundred duck-sized horses?
+Would you rather never have lag again or never lose internet again?
+Would you rather talk to animals or speak every human language?
+Would you rather live in your favorite game world or have its main character's powers?
+Would you rather always be 10 minutes late or always 20 minutes early?
+Would you rather give up music or give up movies?
+Would you rather explore space or the deep ocean?
+Would you rather have a rewind button or a pause button for life?
+Would you rather only eat sweet food or only salty food?
+Would you rather be famous for something embarrassing or unknown for something great?
+Would you rather have unlimited free travel or unlimited free food?
+Would you rather be stuck in a horror game or a puzzle game?
+Would you rather know the future or change the past?
+Would you rather have a personal chef or a personal driver?
+Would you rather lose your sense of taste or your sense of smell?
+Would you rather go a year without your phone or without your computer?
+Would you rather be the best player on a bad team or the worst player on a great team?

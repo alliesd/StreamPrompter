@@ -1,0 +1,17 @@
+# One prompt per line. Lines starting with # are ignored.
+Narrate the next minute like a nature documentary.
+Describe your perfect day off, start to finish.
+Pitch a terrible idea for a new video game.
+If this stream had a theme song, what would it be?
+Run a quick poll: name two options and let chat pick.
+Read the last few chat messages out loud and react to them.
+Give a shoutout to someone who's been active in chat.
+Describe the last 5 minutes of stream as a movie trailer.
+Invent a new holiday and explain how people celebrate it.
+Name three things you're grateful for today.
+Make up a slogan for the stream.
+Describe your room using only food comparisons.
+Speak only in rhymes for the next two minutes.
+Invent a backstory for an object on your desk.
+Explain a random hobby as if you're the world's top expert.
+Give a 30-second speech on something you love.
